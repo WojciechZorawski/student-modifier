@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  postgre_local:
+    image: "postgres:12.2-alpine"
+    ports:
+      - 54320:5432
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: postgre_local
+    volumes:
+      - postgre_localdata:/var/lib/postgres/postgre_local_data
+volumes:
+  postgre_localdata:
+
